@@ -2,6 +2,10 @@ body {
   font:1.25em sans-serif;
   margin:0 10px 10px 10px;
 }
+
+div {
+  margin: 10px 5px;;
+}
 th, strong {font-weight:bold}
 h1 {font-size:2em;font-weight:bold;}
 h2 {font-size:1.5em;font-weight:bold;}
@@ -47,14 +51,14 @@ img{
    max-height: 200px;
 }
 
-.trim-info:focus {
+.trim-info:focus-within {
     overflow: visible;
     white-space: normal;
     height: auto;
     max-height: none;
 }
 
-.trim-info:hover {
+.trim-info:target {
     overflow: visible;
     white-space: normal;
     height: auto;

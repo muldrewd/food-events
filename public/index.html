@@ -10,6 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.2.0/angular-moment.min.js"></script>
+
   <!-- Angular Material -->
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
@@ -31,10 +34,11 @@
       <hr>
       <h2>{{meetup.groupname}}</h2>
       <h2><a href={{meetup.event_url}} target="_blank">{{meetup.name}}</a></h2>
-      <h3>{{meetup.date}}</h3>
-        <div>
-          <p class="trim-info" ng-bind-html="meetup.description"></p>
-        </div>
+      <h3>{{meetup.datetime}}</h3>
+      <div>
+        <p ng-attr-id="des_{{$index}}" class="trim-info" ng-bind-html="meetup.description"></p>
+      </div>
+      <a ng-href="#des_{{$index}}">expand...</a>
     </div>
   </div>
 

@@ -35,6 +35,7 @@
       <h2>{{meetup.groupname}}</h2>
       <h2><a href={{meetup.event_url}} target="_blank">{{meetup.name}}</a></h2>
       <h3>{{meetup.datetime}}</h3>
+      <h4>{{meetup.rsvp}} {{meetup.collectiveNoun}} attending</h4>
       <div>
         <p ng-attr-id="des_{{$index}}" class="trim-info" ng-bind-html="meetup.description"></p>
       </div>

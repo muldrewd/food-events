@@ -9,6 +9,6 @@ app.controller("MeetupCtrl", function($scope, $http, moment) {
       $scope.meetups = data;
     }).
     error(function(data, status, headers, config) {
-      // log error
+      console.log('No data returned...');
     });
 });

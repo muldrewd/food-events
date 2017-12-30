@@ -36,7 +36,7 @@ app.get('/search', function(req, res){
 
   MeetupQuery('10', '47.590218', '-122.334198', terms, function(json){
     if (json) {
-      filteredjson = json.map(meetup => ({name: meetup.name, groupname: meetup.group.name, event_url: meetup.event_url, name: meetup.name, description: replaceAll(meetup.description, foodMap), time: meetup.time}));
+      filteredjson = json.map(meetup => ({name: meetup.name, groupname: meetup.group.name, event_url: meetup.event_url, name: meetup.name, description: replaceAll(meetup.description, foodMap), time: meetup.time, rsvp: meetup.yes_rsvp_count, collectiveNoun: meetup.group.who}));
       res.json(filteredjson);
     } else {
       res.json([]);

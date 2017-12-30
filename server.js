@@ -47,8 +47,8 @@ app.get('/search', function(req, res){
         event_url: meetup.event_url,
         name: meetup.name,
         description: replaceAll(meetup.description, foodMap),
-        time: meetup.time, r
-        svp: meetup.yes_rsvp_count,
+        time: meetup.time,
+        rsvp: meetup.yes_rsvp_count,
         collectiveNoun: meetup.group.who
       }));
       res.json(filteredjson);

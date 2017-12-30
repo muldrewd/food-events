@@ -6,30 +6,32 @@ body {
 div {
   margin: 10px 3px;;
 }
-th, strong {font-weight:bold}
-h1 {font-size:2em;font-weight:bold;}
-h2 {font-size:1.5em;font-weight:bold;}
 
-h3 {font-size:1.25em;font-weight:bold;}
-h1, h2, h3, h4 {margin:10px 0;}
-th, td {
-  vertical-align:top;
-  border:1px solid #000;
-  padding:5px;
+th, strong {
+  font-weight:bold
 }
-table {
-  border-collapse:collapse;
-  width:100%;
+
+h1 {
+  font-size:2em;
+  font-weight:bold;
 }
+
+h2 {
+  font-size:1.5em;
+  font-weight:bold;
+}
+
+h3 {
+  font-size:1.25em;
+  font-weight:bold;
+}
+
+h1, h2, h3, h4 {
+  margin:10px 0;
+}
+
 p {
   margin:0;
-}
-#users-address {
-  width:400px;
-}
-ul {
-  list-style:square;
-  margin-left:20px;
 }
 
 .red {
@@ -47,20 +49,20 @@ img{
    display: inline-block;
    overflow: hidden;
    text-overflow: ellipsis;
-   white-space: nowrap;
-   max-height: 200px;
+   /*white-space: nowrap;*/
+   max-height: 150px;
 }
 
 .trim-info:focus-within {
     overflow: visible;
-    white-space: normal;
+    /*white-space: normal;*/
     height: auto;
     max-height: none;
 }
 
 .trim-info:target {
     overflow: visible;
-    white-space: normal;
+    /*white-space: normal;*/
     height: auto;
     max-height: none;
 }

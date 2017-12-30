@@ -20,11 +20,16 @@ var foodMap = {};
 terms.forEach(term => (foodMap[term] = `<span class='red'>${term}</span>`))
 
 function replaceAll(str,mapObj){
-    var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+  if (!str){
+    console.log("There is no string content...");
+    return;
+  }
 
-    return str.replace(re, function(matched){
-        return mapObj[matched.toLowerCase()];
-    });
+  var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+
+  return str.replace(re, function(matched){
+      return mapObj[matched.toLowerCase()];
+  });
 }
 
 
@@ -36,7 +41,16 @@ app.get('/search', function(req, res){
 
   MeetupQuery('10', '47.590218', '-122.334198', terms, function(json){
     if (json) {
-      filteredjson = json.map(meetup => ({name: meetup.name, groupname: meetup.group.name, event_url: meetup.event_url, name: meetup.name, description: replaceAll(meetup.description, foodMap), time: meetup.time, rsvp: meetup.yes_rsvp_count, collectiveNoun: meetup.group.who}));
+      filteredjson = json.map(meetup => ({
+        name: meetup.name,
+        groupname: meetup.group.name,
+        event_url: meetup.event_url,
+        name: meetup.name,
+        description: replaceAll(meetup.description, foodMap),
+        time: meetup.time, r
+        svp: meetup.yes_rsvp_count,
+        collectiveNoun: meetup.group.who
+      }));
       res.json(filteredjson);
     } else {
       res.json([]);

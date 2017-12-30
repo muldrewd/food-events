@@ -78,7 +78,13 @@ function MeetupQuery (radius, lat, long, terms, callback) {
   console.log(options.url);
 
   request(options, function(err, res, body) {
-    let json = JSON.parse(body);
+    try {
+      let json = JSON.parse(body);
+    }
+    catch(e) {
+      console.log(e);
+    }
+    
     callback(json.results);
   });
 }

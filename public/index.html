@@ -24,7 +24,7 @@
 </head>
 
 <body ng-app="MyApp">
-  
+
   <h1>The Food Events</h1>
 
   <p>This app makes it easy to find food events listed on meetup.com. Food terms <span class='red'>('food', 'pizza', 'snacks', 'appetizer', 'lunch', 'dinner', 'tacos')</span> in the description are highlighted in <span class='red'>red</span>.</p>
@@ -40,7 +40,7 @@
       <div>
         <p ng-attr-id="des_{{$index}}" class="trim-info" ng-bind-html="meetup.description"></p>
       </div>
-      <a ng-href="#des_{{$index}}">expand...</a>
+      <a ng-href="#des_{{$index}}" onclick="this.style.display='none';">Read more...</a>
     </div>
   </div>
 

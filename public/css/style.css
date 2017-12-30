@@ -53,13 +53,6 @@ img{
    max-height: 150px;
 }
 
-.trim-info:focus-within {
-    overflow: visible;
-    /*white-space: normal;*/
-    height: auto;
-    max-height: none;
-}
-
 .trim-info:target {
     overflow: visible;
     /*white-space: normal;*/

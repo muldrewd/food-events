@@ -32,10 +32,10 @@
   <div ng-controller="MeetupCtrl">
     <div ng-repeat="meetup in meetups">
       <hr>
+      <h3>{{meetup.datetime}}</h3>
       <h2>{{meetup.groupname}}</h2>
       <h2><a href={{meetup.event_url}} target="_blank">{{meetup.name}}</a></h2>
-      <h3>{{meetup.datetime}}</h3>
-      <h4>{{meetup.rsvp}} {{meetup.collectiveNoun}} attending</h4>
+      <h3>{{meetup.rsvp}} {{meetup.collectiveNoun}} attending</h3>
       <div>
         <p ng-attr-id="des_{{$index}}" class="trim-info" ng-bind-html="meetup.description"></p>
       </div>

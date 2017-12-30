@@ -11,7 +11,7 @@ h1 {font-size:2em;font-weight:bold;}
 h2 {font-size:1.5em;font-weight:bold;}
 
 h3 {font-size:1.25em;font-weight:bold;}
-h1, h2 {margin:10px 0;}
+h1, h2, h3, h4 {margin:10px 0;}
 th, td {
   vertical-align:top;
   border:1px solid #000;

@@ -1,9 +1,9 @@
+require('dotenv').config()
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const moment = require('moment');
-
-require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,21 +13,30 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
-
+// food terms to search events for
 var terms = ['food', 'pizza', 'snack', 'appetizer', 'lunch', 'dinner', 'tacos'];
 var foodMap = {};
 
+// creates a map to replace with span containing the class red
 terms.forEach(term => (foodMap[term] = `<span class='red'>${term}</span>`))
 
+// takes a string as input and a map object containing the terms to be replaced
+// then constructs a regular expression to search for these terms and replace
+// with corresponding mapping
 function replaceAll(str,mapObj){
   if (!str){
     console.log("There is no string content...");
     return;
   }
 
-  var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+  if (!mapObj){
+    console.log("There is no map object to replace with...");
+    return;
+  }
 
-  return str.replace(re, function(matched){
+  var regex = new RegExp(Object.keys(mapObj).join("|"),"gi");
+
+  return str.replace(regex, function(matched){
       return mapObj[matched.toLowerCase()];
   });
 }

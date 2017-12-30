@@ -32,8 +32,8 @@
       <h2>{{meetup.groupname}}</h2>
       <h2><a href={{meetup.event_url}} target="_blank">{{meetup.name}}</a></h2>
       <h3>{{meetup.date}}</h3>
-        <div class="">
-          <p ng-bind-html="meetup.description"></p>
+        <div>
+          <p class="trim-info" ng-bind-html="meetup.description"></p>
         </div>
     </div>
   </div>

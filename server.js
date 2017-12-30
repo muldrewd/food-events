@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const moment = require('moment');
 
+require('dotenv').config()
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MeetupAPIkey = process.env.MEETUPKEY;

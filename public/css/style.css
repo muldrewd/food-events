@@ -32,3 +32,31 @@ ul {
 color: red;
 font-weight: bold;
 }
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.trim-info {
+   max-width: 100%;
+   display: inline-block;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   max-height: 200px;
+}
+
+.trim-info:focus {
+    overflow: visible;
+    white-space: normal;
+    height: auto;
+    max-height: none;
+}
+
+.trim-info:hover {
+    overflow: visible;
+    white-space: normal;
+    height: auto;
+    max-height: none;
+}

@@ -5,14 +5,14 @@ const moment = require('moment');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MeetupAPIkey = process.env.PORT
+const MeetupAPIkey = process.env.MEETUPKEY;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 
-var terms = ['food', 'pizza', 'snacks', 'appetizer', 'lunch', 'dinner'];
+var terms = ['food', 'pizza', 'snack', 'appetizer', 'lunch', 'dinner', 'tacos'];
 var foodMap = {};
 
 terms.forEach(term => (foodMap[term] = `<span class='red'>${term}</span>`))
@@ -34,7 +34,7 @@ app.get('/search', function(req, res){
 
   MeetupQuery('10', '47.590218', '-122.334198', terms, function(json){
     if (json) {
-      filteredjson = json.map(meetup => ({name: meetup.name, groupname: meetup.group.name, event_url: meetup.event_url, name: meetup.name, description: replaceAll(meetup.description, foodMap), date: moment.utc(meetup.time).local().format('LLL')}));
+      filteredjson = json.map(meetup => ({name: meetup.name, groupname: meetup.group.name, event_url: meetup.event_url, name: meetup.name, description: replaceAll(meetup.description, foodMap), date: moment.utc(new Date(meetup.time)).local().format('LLL')}));
       res.json(filteredjson);
     } else {
       res.json([]);

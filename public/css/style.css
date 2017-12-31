@@ -59,3 +59,5 @@ img{
     height: auto;
     max-height: none;
 }
+
+.highlighted { background: yellow }

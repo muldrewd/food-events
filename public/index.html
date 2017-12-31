@@ -29,10 +29,12 @@
 
   <p>This app makes it easy to find food events listed on meetup.com. Food terms <span class='red'>('food', 'pizza', 'snacks', 'appetizer', 'lunch', 'dinner', 'tacos')</span> in the description are highlighted in <span class='red'>red</span>.</p>
 
-  Specific terms to filter: <input ng-model="searchtxt" type="text" placeholder="filter terms">
+  <fieldset>
+    <p>Specific terms to filter: <input ng-model="searchtxt" type="text" placeholder="Search..."></p>
+  </fieldset>
 
   <div ng-controller="MeetupCtrl">
-    <div ng-repeat="meetup in meetups | filter : searchtxt" ng-bind-html="meetup.description | highlight:searchtxt">
+    <div ng-repeat="meetup in meetups | filter : searchtxt">
       <hr>
       <h4>{{meetup.datetime}}</h4>
       <hr>
@@ -40,7 +42,7 @@
       <h3>{{meetup.groupname}}</h3>
       <h4>{{meetup.rsvp}} {{meetup.collectiveNoun}} attending</h4>
       <div>
-        <p ng-attr-id="des_{{$index}}" class="trim-info" ng-bind-html="meetup.description"></p>
+        <p ng-attr-id="des_{{$index}}" class="trim-info" ng-bind-html="meetup.description | highlight:searchtxt"></p>
       </div>
       <a ng-href="#des_{{$index}}" onclick="this.style.display='none';">Read more...</a>
     </div>

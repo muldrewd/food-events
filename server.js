@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 // food terms to search events for
-var terms = ['food', 'pizza', 'snack', 'appetizer', 'lunch', 'dinner', 'tacos'];
+var terms = ['food', 'pizza', 'snack', 'appetizer', 'lunch', 'dinner', 'tacos', 'BBQ'];
 var foodMap = {};
 
 // creates a map to replace with span containing the class red

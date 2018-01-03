@@ -1,3 +1,16 @@
+var previous = null;
+
+function HideReadMore(ref){
+
+  ref.style.display='none';
+
+  if (previous){
+    previous.style.display='inline'
+  }
+
+  previous = ref;
+}
+
 var app = angular.module("MyApp", ['ngSanitize','angularMoment']);
 
 app.controller("MeetupCtrl", function($scope, $http, moment) {
@@ -15,4 +28,21 @@ app.controller("MeetupCtrl", function($scope, $http, moment) {
     .error(function(data, status, headers, config) {
       console.log('No data returned...');
     });
+});
+
+
+app.filter('highlight', function () {
+  return function (text, search, caseSensitive) {
+    if (text && (search || angular.isNumber(search))) {
+      text = text.toString();
+      search = search.toString();
+      if (caseSensitive) {
+        return text.split(search).join('<span class="highlighted">' + search + '</span>');
+      } else {
+        return text.replace(new RegExp(search, 'gi'), '<span class="highlighted">$&</span>');
+      }
+    } else {
+      return text;
+    }
+  };
 });

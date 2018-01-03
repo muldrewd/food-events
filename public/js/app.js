@@ -1,3 +1,16 @@
+var previous = null;
+
+function HideReadMore(ref){
+
+  ref.style.display='none';
+
+  if (previous){
+    previous.style.display='inline'
+  }
+
+  previous = ref;
+}
+
 var app = angular.module("MyApp", ['ngSanitize','angularMoment']);
 
 app.controller("MeetupCtrl", function($scope, $http, moment) {

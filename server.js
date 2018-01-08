@@ -72,8 +72,9 @@ function MeetupQuery (radius, lat, long, terms, offset, accumulator, callback) {
 
   const options = {
     // url : `https://api.meetup.com/find/upcoming_events?radius=${radius}&lat=${lat}&lon=${long}&text=${terms}&order=time&page=20000&key=${MeetupAPIkey}&end_date_range=2020-12-30T00:00:00`,
-    // url : `https://api.meetup.com/2/open_events?&sign=true&photo-host=public&lat=47.590218&lon=-122.334198&text=${terms.join(' ')}&key=${MeetupAPIkey}&offset=${offset}&page=200&time=,1m`,
-    url : `https://api.meetup.com/2/open_events?&sign=true&photo-host=public&lat=47.590218&lon=-122.334198&key=${MeetupAPIkey}&offset=${offset}&page=200&time=,1w`,
+    //url : `https://api.meetup.com/2/open_events?&sign=true&photo-host=public&lat=47.590218&lon=-122.334198&text=${terms.join(' ')}&key=${MeetupAPIkey}&offset=${offset}&page=200&time=,1m`,
+    // url : `https://api.meetup.com/2/open_events?&sign=true&photo-host=public&lat=47.590218&lon=-122.334198&key=${MeetupAPIkey}&offset=${offset}&page=200&time=,1w`,
+    url : `https://api.meetup.com/2/open_events?&sign=true&photo-host=public&lat=47.590218&lon=-122.334198&key=${MeetupAPIkey}&offset=${offset}&page=200&time=,1m`,
     method: 'GET'
   };
 

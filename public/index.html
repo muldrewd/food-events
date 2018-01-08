@@ -37,7 +37,7 @@
 
     <h4>Currently showing {{filtered.length}} Meetups</h4>
 
-    <div ng-repeat="meetup in filtered = (meetups | filter : searchtxt)">
+    <div ng-attr-id="des_{{$index}}" class="meetup" ng-repeat="meetup in filtered = (meetups | filter : searchtxt)">
       <hr>
       <h4>{{meetup.datetime}}</h4>
       <hr>
@@ -45,7 +45,7 @@
       <h3>{{meetup.groupname}}</h3>
       <h4>{{meetup.rsvp}} {{meetup.collectiveNoun}} attending</h4>
       <div>
-        <p ng-attr-id="des_{{$index}}" class="trim-info" ng-bind-html="meetup.description | highlight:searchtxt"></p>
+        <p class="trim-info" ng-bind-html="meetup.description | highlight:searchtxt"></p>
       </div>
       <a ng-href="#des_{{$index}}" onclick="HideReadMore(this)">Read more...</a>
     </div>

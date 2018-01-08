@@ -53,7 +53,7 @@ img{
    max-height: 150px;
 }
 
-.trim-info:target {
+.meetup:target > div > p {
     overflow: visible;
     /*white-space: normal;*/
     height: auto;

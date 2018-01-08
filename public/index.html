@@ -35,7 +35,7 @@
 
   <div ng-controller="MeetupCtrl">
 
-    <h4>Currently showing {{filtered.length}} Meetups</h4>
+    <h4>Showing {{filtered.length}} Meetups...</h4>
 
     <div ng-attr-id="des_{{$index}}" class="meetup" ng-repeat="meetup in filtered = (meetups | filter : searchtxt)">
       <hr>
